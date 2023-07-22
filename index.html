@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da velha | Ph</title>
+    <link rel="shortcut icon" href="ui-checks-grid.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="area-game" id="area-game">
+            <header class="header">
+                <h1 id="titulo">Jogo Da Velha</h1>
+            </header>
+            <div class="buttons">
+                <button class="btnGame" onclick="makeMove(0)"></button>
+                <button class="btnGame" onclick="makeMove(1)"></button>
+                <button class="btnGame" onclick="makeMove(2)"></button>
+                <button class="btnGame" onclick="makeMove(3)"></button>
+                <button class="btnGame" onclick="makeMove(4)"></button>
+                <button class="btnGame" onclick="makeMove(5)"></button>
+                <button class="btnGame" onclick="makeMove(6)"></button>
+                <button class="btnGame" onclick="makeMove(7)"></button>
+                <button class="btnGame" onclick="makeMove(8)"></button>
+            </div>
+            <button class="btnGeral" id="btnConfig" onclick="settings()">Settings</button>
+        </div>
+        <div class="settings" id="settings">
+            <div class="settings-control">
+                <h2>Settings</h2>
+                <div class="settings-body">
+                    <h3>Quem começa:
+                        <select onchange="vezJogador()" id="selectPlayer">
+                            <option value="x">X</option>
+                            <option value="o">O</option>
+                        </select>
+                    </h3>
+                    <h3>Vez de: <span id="playerTurn">X</span></h3>
+                    <h3>Wins de X: <span id="winsX">0</span></h3>
+                    <h3>Wins de O: <span id="winsO">0</span></h3>
+                    <button class="btnGeral btnRes" onclick="resetGame()">Restart</button>
+                </div>
+                <button class="btnGeral btnBack" onclick="back()" id="btnBack">Voltar</button>
+            </div>
+        </div>
+        <footer id="footer">
+            <h2>&copy Bulacha7kpa</h2>
+        </footer>
+    </div>
+</body>
+</html>

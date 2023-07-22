@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;700&display=swap');
+
+:root {
+    --branco: #F0F2F2;
+    --azul-mt-escuro: #080F26;
+    --azul-escuro: #173540;
+    --azul-claro: #217373;
+    --verde: #2EF283;
+    --verde-escuro: #21A668;
+    --cinza: #3D3D3D;
+    --dourado: #BF9A2C;
+    --preto: #0E040E;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oxanium', monospace;
+}
+
+.hide {
+    display: none;
+}
+
+.btnGame {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--azul-mt-escuro);
+    border: 1px solid var(--dourado);
+    transition: all .2s ease-in-out;
+    box-shadow: 0 0 24px var(--preto);
+    color: var(--verde);
+    font-weight: bold;
+    font-size: 2rem;
+    text-shadow: 0 0 24px var(--verde);
+}
+
+.btnGeral {
+    display: none;
+    margin-top: 1rem;
+    width: 250px;
+    padding: .25rem .5rem;
+    border-radius: 15px;
+    border: none;
+    background-color: var(--verde);
+    border: 1px solid var(--verde);
+    box-shadow: 0 0 24px 5px var(--preto);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all .2s ease-in-out;
+}
+
+.btnGeral:hover {
+    box-shadow: 0 0 14px var(--verde);
+    cursor: pointer;
+}
+
+.btnRes {
+    display: block;
+}
+
+.btnBack {
+    width: 100%;
+}
+
+.btnGame:hover {
+    box-shadow: 0 0 24px var(--dourado);
+    scale: .9;
+    cursor: crosshair;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+    'game game settings'
+    'game game settings'
+    'game game settings'
+    'game game settings'
+    'game game settings'
+    'footer footer footer';
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--azul-mt-escuro);
+    color: var(--branco);
+}
+
+.area-game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header {
+    width: 400px;
+    text-align: center;
+    margin-bottom: 5rem;
+    padding: 1rem;
+    border-bottom: 2px solid var(--verde);
+}
+
+.header #titulo {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    text-shadow: 0 0 24px var(--branco);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: .5rem;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings-control {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    border: 2px solid var(--verde);
+    box-shadow: 0 0 14px var(--verde);
+    border-radius: 15px;
+    width: 90%;
+}
+
+.settings-control h2 {
+    font-size: 2rem;
+    text-shadow: 0 0 24px var(--branco);
+    border-bottom: 2px solid var(--verde);
+    width: 300px;
+    text-align: center;
+    padding: .5rem;
+    margin-bottom: 3.5rem;
+    letter-spacing: 3px;
+}
+
+.settings-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+    padding: 1rem;
+    gap: 2rem;
+    border-top: 1px solid var(--branco);
+    border-bottom: 1px solid var(--branco);
+}
+
+.settings-body select {
+    margin-left: 1rem;
+    padding: .1rem .2rem;
+    border-radius: 5px;
+    background-color: var(--azul-mt-escuro);
+    border: 1px solid var(--dourado);
+    box-shadow: 0 0 10px var(--dourado);
+    color: var(--branco);
+    height: 25px;
+    width: 50px;
+}
+
+#playerTurn, #winsX, #winsO {
+    margin-left: 1rem;
+    font-size: 2rem;
+    text-shadow: 0 0 24px var(--branco);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--verde);
+    letter-spacing: 3px;
+    font-style: italic;
+    text-shadow: 0 0 24px var(--verde);
+}
+
+#area-game {
+    grid-area: game;
+}
+
+#settings {
+    grid-area: settings;
+}
+
+#footer {
+    grid-area: footer;
+}
+
+@media (max-width: 850px) {
+    .container {
+        justify-content: center;
+    }
+
+    .settings {
+        display: none;
+    }
+
+    #btnConfig {
+        display: block;
+    }
+
+    .area-game, #footer {
+        scale: .8;
+    }
+
+    .btnBack {
+        display: block;
+    }
+}
